@@ -19,6 +19,8 @@
   "homepage": "https://github.com/paulodero/GitHubActionSample#readme",
   "dependencies": {
     "@actions/core": "^1.2.5",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "ajv": "^6.12.4",
+    "better-ajv-errors": "^0.6.7"
   }
 }

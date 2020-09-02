@@ -1,13 +1,17 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Validate JSON'
+description: 'GitHub Action: Validate JSON'
+author: 'paulodero'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  schema:
+    description: 'Relative file path under the repository of a JSON schema file to validate the other JSON files with.'
     required: true
-    default: 'World'
+    default: './schema.json'
+  json:
+    description: 'One or more relative file paths under the repository (seperated by comma) of the JSON files to validate with the schema provided.'
+    required: true
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  invalid:
+    description: 'One or more of relative file paths of the invalid JSON files, found in the repository (seperated by comma).'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.ts'
